@@ -1,0 +1,198 @@
+/*NAVBAR----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Navbar itself will expand to fit its content */
+nav.navbar {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #5c0015 !important;
+  font-size: large !important;
+  font-family: "League Spartan" !important;
+  width: 100vw !important;
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 80px !important;
+  top: 0 !important;
+}
+
+/* Container that enables horizontal scroll if needed */
+.nav-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Nav links */
+.navbar-nav {
+  align-items: center; 
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar a.nav-link,
+.navbar .navbar-brand {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  white-space: nowrap;
+  align-items: center; 
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.navbar-left{
+  color:#fff;
+  font-size: 25px;
+  margin-left:5px;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  align-items: center; 
+}
+
+.navbar-left a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+  text-decoration: none; /* keep links clean */
+  color: inherit; /* so text uses navbar color */
+}
+
+
+.navbar-title{
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  color: white !important;
+}
+
+
+
+.logo{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevents stretching in flex layout */
+}
+
+.navbar a.nav-link.nav-button {
+  color: black !important;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  display: inline-flex;      
+  justify-content: center; 
+  font-weight: bold;
+}
+
+/*HOMEPAGE----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+  display: block; /* or remove 'display' entirely */
+}
+
+
+
+.share-wrapper{
+  color: black !important;
+  width:200px ;
+  height:50px ;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  display: inline-flex;   
+  justify-content: center;
+  align-items: center;     
+  font-weight: bold;
+  margin-left: 985px;
+  position: relative;
+  top: -40px;  /* Adjust upward as needed */
+}
+
+.dividedbycause{
+  font-size: 35px;
+  font-weight:bold;
+  font-family: "Montserrat", "sans-serif";
+  padding-top: 50px;
+  text-align: center;
+}
+
+
+/*lowknoidea------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.page-content {
+  flex-direction: column;
+  box-sizing: border-box;
+  white-space: normal;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Main Layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.left-column,
+.right-column {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #c4302b;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 180px;
+}

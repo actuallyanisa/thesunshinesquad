@@ -1,0 +1,477 @@
+<head>
+  {% extends "base.html" %}
+  {% block title %}Home{% endblock %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  {% block content %}
+  /* TOP PART WITH BUTTON ------------------------------------*/
+    <style>
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0;
+        line-height: 1;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        line-height: 1;
+        padding: 0;
+      }
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 500px;   /* instead of fixed height */
+  height: 80vh;        /* responsive height */
+  overflow: hidden;
+}
+
+.heroimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔥 important */
+  display: block;
+
+  /* ❌ REMOVE MASK COMPLETELY */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  inset: 0;
+
+  /* smoother + more consistent */
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85) 0%,
+    rgba(0,0,0,0.6) 40%,
+    rgba(0,0,0,0.2) 70%,
+    rgba(0,0,0,0) 100%
+  );
+
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+      .hero-text {
+        color: white;
+        text-align: left;
+        z-index: 2;
+        max-width: 45%;
+        padding: 1rem;
+        padding-top: 50px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-text {
+          max-width: 80%;
+          text-align: center;
+          padding-top: 20px;
+        }
+        .hero-overlay-gradient {
+          justify-content: center;
+          padding: 1rem;
+        }
+      }
+
+      .hero-text h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+      }
+
+      .hero-text p {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      .hero-text a {
+        padding: 0.6rem 1.2rem;
+        background-color: #bc1823;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+    .horizontal-scroll-container {
+      display: block;
+      margin: 0 auto;
+    }
+
+/* ===== Mission Section2 ===== */
+.mission-section1 {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  align-items: center;
+  gap: 3rem;
+  padding-left: 50px !important;
+  padding-top: -80px !important;
+  padding-right: 50px;
+}
+
+.about2-img {
+  flex-shrink: 0;
+  width: 400px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 0; /* square borders */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-top: 50px;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
+
+.mission-text1 {
+  flex-grow: 1;
+  color: #000;
+}
+
+.mission-text1 h2 {
+  font-weight: 900;
+  font-size: 3rem;
+  color: #650000;
+  margin-bottom: 1rem;
+}
+
+.mission-text1 p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  white-space: normal;
+}
+
+/* ===== Mobile Adjustments for Mission Section2 ===== */
+@media screen and (max-width: 768px) {
+  .mission-section1 {
+    flex-direction: column; /* stack image and text */
+    align-items: center;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem;
+    gap: 1.5rem;
+    padding-top: 2rem !important; /* remove negative top padding on mobile */
+  }
+
+  .about2-img {
+    width: 100%;
+    height: auto; /* maintain aspect ratio */
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .mission-text1 h2 {
+    font-size: 2.4rem; /* slightly smaller for mobile */
+    text-align: center;
+  }
+
+  .mission-text1 p {
+    font-size: 1.15rem; /* slightly smaller for mobile */
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+/* STATS ------------------------------------*/  
+.stats-full-bg {
+  background-color: #5c0015;
+  color: white;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: space-around; /* evenly spaced */
+  align-items: center;
+  flex-wrap: wrap; /* allows stacking on mobile */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.stat-item h2 {
+  font-size: 80px;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .stat-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .stat-item h2 {
+    font-size: 2.4rem;
+  }
+}
+/* ===== What We Offer Section ===== */
+  .whatweoffer-section {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 50px !important;
+    padding-right: 50px;
+  }
+
+  .about-img{
+    flex-shrink: 0;
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 0; /* square borders */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-right: 10px;
+    margin-top: 60px;
+  }
+  
+  .about1-img{
+    flex-shrink: 0;
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 0; /* square borders */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 60px;
+    margin-right: 10px;
+  }
+
+  .whatweoffer-text {
+    flex-grow: 1;
+    color: #000;
+  }
+
+  .whatweoffer-text h2 {
+    font-weight: 900;
+    font-size: 3rem;
+    color: #650000;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  .whatweoffer-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    white-space: normal;
+  }
+
+  .whatweoffer-button a {
+    padding: 0.6rem 1.2rem;
+    background-color: #bc1823;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display:block;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-left: 230px;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+
+  @media (max-width: 768px) {
+  .whatweoffer-section {
+    flex-direction: column;      /* stack instead of side-by-side */
+    padding-left: 20px !important;
+    padding-right: 20px;
+    text-align: center;
+  }
+
+  .about-img,
+  .about1-img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;             /* remove weird spacing */
+    padding-top: 0;
+  }
+
+  .whatweoffer-text h2 {
+    font-size: 2.4rem;
+    margin-top: 10px;
+  }
+
+  .whatweoffer-text p {
+    font-size: 1rem;
+  }
+
+  .whatweoffer-button a {
+    margin-left: 0;             /* 🔥 fixes off-center button */
+    margin-right: 0;
+    margin: 20px auto 0 auto;   /* center it */
+  }
+}
+
+
+/* FOOTER ------------------------------------*/
+
+  .footer-bar {
+    margin-top: 100px;
+    background-color: #bb1e29;
+    color: white;
+    padding: 3rem 5vw 2rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    min-height: 250px;
+    position: relative;
+  }
+
+  .footer-left button {
+    background-color: #e0e0e0;
+    color: black;
+    border: none;
+    padding: 0.9rem 1.4rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0.5rem;
+    margin-left: 1vw;
+  }
+
+  .footer-left button:hover {
+    background-color: #d5d5d5;
+  }
+
+  .footer-right-centered {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .footer-bar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-right-centered {
+      margin-top: 1rem;
+    }
+  }
+
+  .footer-right-centered h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-right-centered p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+
+  .footer-right-centered i {
+    margin-right: 6px;
+  }
+    
+
+</style>
+/* TOP PART WITH BUTTON ------------------------------------*/
+  <div class="horizontal-scroll-container">
+    <!-- HERO IMAGE SECTION -->
+      <div class="hero-image-wrapper">
+        <img src="{{ url_for('static', filename='images/futurespeakers7.avif') }}" class="heroimg" />
+        <div class="hero-overlay-gradient">
+          <div class="hero-text">
+            <h1>Future Speakers Initiative</h1>
+            <p>With Future Speakers Initiative, we're empowering the next generation of civic leaders through accessible speech and debate education. We provide every child with the opportunity to grow as an advocate and learn the communication skills they'll need to know for life, completely free of cost.</p>
+            <a href="https://forms.gle/LtX2zEsSTbcQURH57">REGISTER FOR SUMMER 2026</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- ===== Mission Section2 ===== -->
+    <div class="section-wrapper">
+  <div class="mission-section1">
+    <img src="{{ url_for('static', filename='images/futurespeakers1.avif') }}" class="about2-img">
+    <div class="mission-text1">
+      <h2>Our Mission</h2>
+      <p> Our mission is to empower middle school students with essential communication, critical thinking, and public speaking skills through accessible speech and debate resources and training. We are committed to advocating for educational equity by bringing high-quality speech and debate programs to communities that lack access in their school curriculum. We envision a future where every student, regardless of background, has the tools to speak up, lead, and drive change in their communities.
+      </p>
+    </div>
+  </div>
+  </div>
+
+<!-- ===== Stats Section ===== -->
+<div class="stats-full-bg">
+  <div class="stat-item">
+    <h2>500+</h2>
+    <p>Students Empowered</p>
+  </div>
+
+  <div class="stat-item">
+    <h2>20+</h2>
+    <p>In-Person Events</p>
+  </div>
+
+  <div class="stat-item">
+    <h2>4</h2>
+    <p>Online Courses</p>
+  </div>
+</div>
+
+<!-- ===== What We Offer ===== -->
+  <div class="section-wrapper">
+  <div class="whatweoffer-section">
+    <div class="whatweoffer-text">
+      <h2>What We Offer</h2>
+      <p> Future Speakers Initiative provides dynamic in-person and online programs that equip students with the public speaking and leadership skills needed to inspire change and close the opportunity gap in speech and debate education.
+      </p>
+      <div class="whatweoffer-button">
+        <a href="/events">LEARN MORE</a>
+    </div>
+  </div>
+    <img src="{{ url_for('static', filename='images/futurespeakers2.avif') }}" class="about-img">
+    <img src="{{ url_for('static', filename='images/futurespeakers3.avif') }}" class="about1-img">
+  </div>
+</div>
+
+  <style>
+/* FOOTER ------------------------------------*/ 
+  </style>
+      <div class="footer-bar">
+        <div class="footer-left" style="align-self: flex-end;">
+        </div>
+
+        <div class="footer-right-centered">
+          <h3 style="font-size: 1.5rem; font-weight: 600;">Interested in FREE lessons for your child?</h3>
+          <p style="font-size: 1.1rem;">Contact us at:</p>
+          <p style="font-size: 1.1rem;">futurespeakersinfo@gmail.com</p>
+          <p style="font-size: 1.1rem;">
+            <a href="https://www.instagram.com/pulseforjustice_official/" target="_blank" style="color: white; text-decoration: none;">
+              <i class="fa fa-instagram" style="font-size: 1.3rem; position: relative; top: 2px; left: 4px;"></i> @futurespeakersinitiative
+          <p style="font-size: 1.1rem;"><br>The Future Speakers Initiative is a registered 501(c)(3) organization.</p>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+</style>
+
+  {% endblock %}
+</body>
+</html>
