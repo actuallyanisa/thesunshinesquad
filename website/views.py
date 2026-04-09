@@ -12,6 +12,8 @@ from .models import Fundraiser
 from PIL import Image
 import uuid
 import re
+from flask_mail import Message
+from . import mail
 
 views = Blueprint('views', __name__)
 
@@ -201,13 +203,11 @@ def update_email():
 def aboutus():
     return render_template('aboutus.html')
 
-@views.route('/events')
-def events():
-    return render_template('events.html')
+@views.route('/joinus')
+def joinus():
+    return render_template('joinus.html')
 
-@views.route('/resources')
-def resources():
-    return render_template('resources.html')
-
-from flask_mail import Message
-from . import mail
+@views.route('/newsletter')
+def newsletter():
+    issues = ["issue10.png", "issue9.png", "issue8.png", "issue7.png", "issue6.png", "issue5.png", "issue4.png", "issue3.png", "issue2.png", "issue1.png"]
+    return render_template('newsletter.html', issues=issues)

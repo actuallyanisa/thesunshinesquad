@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand navbar-dark fixed-top">
   <div class="navbar-left">
     <a href="/">
-      <img src="{{ url_for('static', filename='images/futurespeakerslogo.jpg') }}" alt="Logo" class="logo" />
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo" />
     </a>
   </div>
 
   <div class="navbar-nav ml-auto">
-    <a class="nav-item nav-link" href="{{ url_for('views.events') }}">EVENTS</a>
-    <a class="nav-item nav-link" href="{{ url_for('views.resources') }}">RESOURCES</a>
+    <a class="nav-item nav-link" href="{{ url_for('views.joinus') }}">JOIN US</a>
+    <a class="nav-item nav-link" href="{{ url_for('views.newsletter') }}">NEWSLETTER</a>
     <a class="nav-item nav-link" href="{{ url_for('views.aboutus') }}">ABOUT US</a>
 </nav>
