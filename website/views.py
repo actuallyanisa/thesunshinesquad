@@ -209,5 +209,5 @@ def joinus():
 
 @views.route('/newsletter')
 def newsletter():
-    issues = ["issue11.png","issue10.png","issue9.png", "issue8.png", "issue7.png", "issue6.png", "issue5.png", "issue4.png", "issue3.png", "issue2.jpg", "issue1.png", "issue0.png"]
+    issues = ["issue12.png","issue11.png","issue10.png","issue9.png", "issue8.png", "issue7.png", "issue6.png", "issue5.png", "issue4.png", "issue3.png", "issue2.jpg", "issue1.png", "issue0.png"]
     return render_template('newsletter.html', issues=issues)
