@@ -58,19 +58,16 @@ addInfoButton.onclick = async () => {
       errorDiv.classList.remove("hidden");
       addInfoButton.disabled = false;
     });
-    const url = `https://thesunshinesquad.net/`; // Replace with your Render URL
-const interval = 30000; // Interval in milliseconds (30 seconds)
+const https = require('https');
 
-//Reloader Function
-function reloadWebsite() {
-  axios.get(url)
-    .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
-    })
-    .catch(error => {
-      console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
-    });
-}
+// Replace with your actual custom domain
+const APP_URL = 'https://www.thesunshinesquad.net/ping'; 
 
-setInterval(reloadWebsite, interval);
-};
+setInterval(() => {
+  https.get(APP_URL, (res) => {
+    // A 200 or 301/302 redirect status means the server is awake!
+    console.log(`[${new Date().toISOString()}] Pinged ${APP_URL}. Status: ${res.statusCode}`);
+  }).on('error', (err) => {
+    console.error(`[${new Date().toISOString()}] Ping failed: ${err.message}`);
+  });
+}, 14 * 60 * 1000);
